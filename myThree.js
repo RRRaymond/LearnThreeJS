@@ -8,15 +8,12 @@ window.onload = function () {
 
 var renderer;
 function initThree() {
-    //width = document.getElementById('canvas-frame').clientWidth;
-    //height = document.getElementById('canvas-frame').clientHeight;
     width = window.innerWidth;
     height = window.innerHeight;
     renderer = new THREE.WebGLRenderer({
         antialias : true
     });
     renderer.setSize(width, height);
-    //document.getElementById('canvas-frame').appendChild(renderer.domElement);
     document.body.appendChild(renderer.domElement);
     renderer.setClearColor(0xFFFFFF, 1.0);
 }
@@ -70,8 +67,7 @@ function initObject() {
     material = new THREE.MeshLambertMaterial({color: 0x00ff00, wireframe: false});
 }
 
-function render()
-{
+function render() {
     delta = clock.getDelta();
     orbitControls.update(delta);
     requestAnimationFrame(render);
